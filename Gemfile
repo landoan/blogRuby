@@ -35,5 +35,5 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-#gem 'debugger'
+gem 'debugger', group: :development
 gem 'rails_12factor', group: 'production'
