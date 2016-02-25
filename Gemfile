@@ -34,6 +34,6 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
+# To use debugger blah blah
 gem 'debugger', group: :development
 gem 'rails_12factor', group: 'production'
