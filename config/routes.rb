@@ -1,21 +1,13 @@
 Blog::Application.routes.draw do
-  get "users/new"
-
-  get "commons/index"
-
-  get "commons/login"
-
-  get "users/goBlog"
-
-  resources :articles
   resources :commons
+  #get '/login', to: 'sessions#new', as: :login
+  post '/login', to: 'sessions#create', as: :login
+  get '/logout', to: 'sessions#destroy', as: :logout
   resources :users do
-    resources :articles, only: [] do
-      get :list, on: :collection
-      get :new
-    end
+    resources :articles
   end
 
+  # these routes are for showing users a login form, logging them in, and logging them out.
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

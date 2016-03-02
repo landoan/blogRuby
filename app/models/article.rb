@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :title
-  belongs_to :user, foreign_key: "user_id"
+  attr_accessible :body, :title, :user_id
+  belongs_to :user
 
 end

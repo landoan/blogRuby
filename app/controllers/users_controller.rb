@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def goBlog
     @user = User.find_by_username(params[:username])
-    @articles = Article.find_all_by_user_id(@user.id)
+    @articles = @user.articles
   end
 
   # POST /articles
@@ -14,11 +14,12 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      redirect_to list_user_articles_path(@user.id)
+      session[:user_id] = @user.id
+      redirect_to user_articles_path(@user.id)
     else
       respond_to do |format|
         format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @user.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
