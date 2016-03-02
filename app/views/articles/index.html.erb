@@ -1,0 +1,46 @@
+  <h1>Listing articles</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <ul>
+        <% @articles.each do |article| %>
+            <li><%= article.title %></li>
+        <% end %>
+      </ul>
+
+
+      <% @articles.each do |article| %>
+          <div class="card card-block">
+            <h4 class="card-title"><%= article.title %></h4>
+            <p class="card-text"><%= article.body %></p>
+            <%= link_to 'Show', article, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-primary" %>
+           <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.body %></td>
+          <td><%= link_to 'Show', article %></td>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Article', new_article_path %>

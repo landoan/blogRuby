@@ -35,5 +35,10 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger blah blah
-gem 'debugger', group: :development
+#gem 'debugger', group: :development
+gem 'byebug', group: :development
 gem 'rails_12factor', group: 'production'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end

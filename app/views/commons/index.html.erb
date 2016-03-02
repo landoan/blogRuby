@@ -1,0 +1,29 @@
+<h1>Welcome to Ruby blog app</h1>
+<div class="col-md-6">
+  <h4>Have your blog?</h4>
+  <%= form_for(:user, :url => {:controller => 'users', :action=>'goBlog', :method=>"get"}) do |f| %>
+      <fieldset class="form-group">
+        <label for="usernameLogin">Username: </label>
+        <%= f.text_field :username, id:"usernameLogin",class: "form-control", placeholder: "Username" %>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Go Blog</button>
+  <% end %>
+</div>
+
+
+<div class="col-md-6">
+  <h4>New to our Ruby blog?</h4>
+  <%= form_for(:user, :url => {:controller => 'users', :action=>'create'}) do |f| %>
+      <fieldset class="form-group">
+        <label for="usernameSignup">Username: </label>
+        <%= f.text_field :username, id: "usernameSignup", class: "form-control", placeholder: "Username" %>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="emailSignup">Email: </label>
+        <%= f.text_field :email, id:"emailSignup" ,class: "form-control", placeholder: "Email" %>
+      </fieldset>
+      <button type="submit" class="btn btn-success">Create</button>
+  <% end %>
+</div>
+
