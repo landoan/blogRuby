@@ -4,8 +4,13 @@ Blog::Application.routes.draw do
   post '/login', to: 'sessions#create', as: :login
   get '/logout', to: 'sessions#destroy', as: :logout
   resources :users do
-    resources :articles
+    resources :articles do
+
+    end
+    get '/get_all', to: 'articles#get_all', as: :get_all
   end
+
+
 
   # these routes are for showing users a login form, logging them in, and logging them out.
 

@@ -11,6 +11,19 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def get_all
+    if params[:search]
+      @articles = Article.search(params[:search])
+    else
+
+      @articles = Article.all
+    end
+    respond_to do |format|
+      format.html # get_all.html.erb
+      format.json { render json: @articles }
+    end
+
+  end
   # GET /articles/1
   # GET /articles/1.json
   def show

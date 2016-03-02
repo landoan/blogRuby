@@ -1,0 +1,20 @@
+<h1 class="text-align-center">Public space </h1>
+<div class="text-align-center">
+<%= form_tag(user_get_all_path, :method => "get", class: "form-inline", id: "search-form") do %>
+    <div class="form-group">
+      <label for="searchInput" class="sr-only">Name</label>
+      <%= text_field_tag :search, params[:search], class: "form-control", id:"searchInput", placeholder: "Search Articles" %>
+      <!-- In order to have the "search" icon int the button, we need to use plain HTML instead
+           of using a Rails form helper -->
+    </div>
+    <button type="submit" class="btn btn-success">Search</button>
+<% end %>
+</div>
+<%= yield %>
+<% @articles.each do |article| %>
+    <div class="card card-block">
+      <h4 class="card-title"><%= article.title %></h4>
+      <p class="card-text"><%= article.body %></p>
+    </div>
+<% end %>
+<%= link_to 'Back', user_articles_path(@user), class: "btn btn-success btn-lg btn-block" %>
