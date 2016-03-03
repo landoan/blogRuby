@@ -7,11 +7,11 @@
 
 **Name of your app** is a Ruby on Rails blog application.
 
-Submitted by: **Your Name Here**
+Submitted by: **Lan Doan Ruby First Blog**
 
-Time spent: **X** hours spent in total
+Time spent: **X** ~15hrs
 
-URL: **Insert your Heroku URL here**
+URL: **https://glacial-woodland-11696.herokuapp.com/** (username: landoanRuby, password:123 - no validation implemented, so don't create a new account with duplicated username or leave username&password fields blank)
 
 ## User Stories
 
