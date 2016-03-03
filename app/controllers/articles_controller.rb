@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = @user.articles
+    @articles = @user.articles.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,10 +13,9 @@ class ArticlesController < ApplicationController
 
   def get_all
     if params[:search]
-      @articles = Article.search(params[:search])
+      @articles = Article.order('created_at DESC').search(params[:search])
     else
-
-      @articles = Article.all
+      @articles = Article.order('created_at DESC').all
     end
     respond_to do |format|
       format.html # get_all.html.erb

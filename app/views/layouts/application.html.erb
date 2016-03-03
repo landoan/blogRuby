@@ -27,6 +27,17 @@
           <%= link_to 'Log out', logout_path, class:"nav-link" %>
         </li>
       </ul>
+
+        <%= form_tag(user_get_all_path, :method => "get", class: "form-inline pull-xs-right", id: "search-form") do %>
+            <div class="form-group">
+              <label for="searchInput" class="sr-only">Name</label>
+              <%= text_field_tag :search, params[:search], class: "form-control", id:"searchInput", placeholder: "Search Articles" %>
+              <!-- In order to have the "search" icon int the button, we need to use plain HTML instead
+                   of using a Rails form helper -->
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+        <% end %>
+
     </div>
   </nav>
       <% end %>

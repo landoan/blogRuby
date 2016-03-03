@@ -1,4 +1,4 @@
-# Pre-work - *Name of App Here*
+# Pre-work - *Lan Doan Ruby Blog*
 
 > HINT: Please
 > - include this README.md in your project and fill out the information.
