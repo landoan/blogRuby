@@ -54,13 +54,15 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
+## Heroku app link
+https://glacial-woodland-11696.herokuapp.com/
 ## Notes
-
-Describe any challenges encountered while building the app.
+- I have 2 git accounts and 2 SSH keys to maintain at the same time in my computer.
+- Dealing with routes config (most of my problem related to routes) and authentication
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [Lan Doan]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
