@@ -1,6 +1,6 @@
   <h1 class="text-align-center"><%= @user.username %>'space </h1>
   <div class="text-align-center row">
-    <% if @user.avatar_link %>
+    <% if @user.avatar_link && @user.avatar_link!='' %>
       <%= image_tag(@user.avatar_link, class: "img-thumbnail", width: "200") %>
     <% else %>
       <%= image_tag("http://lorempixel.com/100/100/", class: "img-thumbnail") %>
